@@ -36,6 +36,9 @@ def generate_bagging_system(list_of_models, system_constraint):
     generate_dummy_client(system_constraint["npatient"])
 
 def init_system(list_of_models, gpus):
+    p = Path("Resnet1d_ray_serve.jsonl".format(base_filters, kernel_size, n_block, hw))
+    p.touch()
+    os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
     serve.init(blocking=True)
 
     # Kwargs creator for profiling the service

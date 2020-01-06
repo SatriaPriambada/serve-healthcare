@@ -20,3 +20,17 @@ Running `python profile.py` populates `.jsonl` file for time taken by each query
 Using `.jsonl` file following can be plotted - 
 ![Latency CDF](profiled_examples/latency_cdf.png)
 ![Query Timeline](profiled_examples/latency_timeline.png)
+### Create system based on configuration
+The system is a special case of ML pipeline based on some multiple model library (V),
+system constraints (C).
+The system will then be configured to run an ensamble of model with Bagging strategy
+
+To run the system try to call
+`python run_config.py test`
+### API call
+If you want to use this code as part of another work you can use the api to generate
+system based on Bagging strategy with specific system constraint
+
+`import run_config.py`
+`generate_bagging_system([pytorch_model_1, pytorch_model_2], {'gpu': 2, 'npatient':10})`
+

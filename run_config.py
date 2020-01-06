@@ -44,32 +44,37 @@ def init_system(list_of_models, gpus):
     # create data point service for hospital
     serve.create_endpoint("hospital", route="/hospital")
     
-    ecg_handle = init_predicition_service("ECG", PytorchPredictorECG)
+    for i,model in enumerate(list_of_models):
+        print("generate list no: ECG{}".format(i))
+        init_prediction_service("ECG{}".format(i), 
+        PytorchPredictorECG, model)
 
-    # prepare args for StorePatientData backend.
-    service_handles_dict = {"ECG": handle}
-    # do prediction after every 3750 queries.
-    num_queries_dict = {"ECG": 3750}
-    # Always keep num_replicas as 1 as this is a stateful Backend
-    # This backend will store all the patient's data and transfer
-    # the prediction to respective Backend (ECG handle in this case)
-    b_config_hospital = BackendConfig(num_replicas=1)
-    serve.create_backend(StorePatientData, "StoreData",
-                        service_handles_dict, num_queries_dict,
-                        backend_config=b_config_hospital)
-    serve.link("hospital", "StoreData")
 
-def init_prediction_service(service_name, backend_class):
+def init_prediction_service(service_name, backend_class, model):
     # create service
     serve.create_endpoint("{}".format(service_name))
 
     # create backend for service
     b_config = BackendConfig(num_replicas=1)
     serve.create_backend(backend_class, "Predict{}".format(service_name),
-                        model, cuda, backend_config=b_config)
+                        model, cuda=True, backend_config=b_config)
     # link service and backend
     serve.link("{}".format(service_name), "Predict{}".format(service_name))
-    return serve.get_handle(service_name)
+    handle = serve.get_handle(service_name)
+
+    # prepare args for StorePatientData backend.
+    service_handles_dict = {service_name: handle}
+    # do prediction after every 3750 queries.
+    num_queries_dict = {service_name: 3750}
+    # Always keep num_replicas as 1 as this is a stateful Backend
+    # This backend will store all the patient's data and transfer
+    # the prediction to respective Backend (ECG handle in this case)
+    b_config_hospital = BackendConfig(num_replicas=1)
+    store_data_name = "StoreData{}".format(service_name)
+    serve.create_backend(StorePatientData, store_data_name,
+                        service_handles_dict, num_queries_dict,
+                        backend_config=b_config_hospital)
+    serve.link("hospital", store_data_name)
 
 def generate_dummy_client(npatient):
     # fire client

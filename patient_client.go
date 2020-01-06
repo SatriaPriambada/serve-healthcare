@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"flag"
 	"io/ioutil"
 	"net/http"
 	"time"
@@ -15,6 +16,9 @@ func MakeRequest(url string, ch chan<- string) {
 	ch <- fmt.Sprintf("%.2f elapsed with response length: %s %s", secs, body, url)
 }
 func main() {
+	patientId:= flag.String("patientId", "0", "string to represent a patient client id")
+	flag.Parse()
+	fmt.Println("patient id:", *patientId)
 	start := time.Now()
 	ch := make(chan string)
 	for i := 0; i <= 3800; i++ {
@@ -24,7 +28,8 @@ func main() {
 		// This how actual client will send the result
 		// go MakeRequest("http://127.0.0.1:8000/hospital?patient_name=Adam&value=0.0&vtype=ECG", ch)
 		// This is how profiling result is send
-		go MakeRequest("http://127.0.0.1:8000/RayServeProfile/hospital", ch)
+		hostAddr := "http://127.0.0.1:8000/RayServeProfile"
+		go MakeRequest( hostAddr + "/hospital?patient_id=" + patientId +"&value=0.0&vtype=ECG", ch)
 	}
 	for i := 0; i <= 3800; i++ {
 		fmt.Println(<-ch)

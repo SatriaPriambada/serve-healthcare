@@ -36,33 +36,15 @@ def generate_bagging_system(list_of_models, system_constraint):
     generate_dummy_client(system_constraint["npatient"])
 
 def init_system(list_of_models, gpus):
-    p = Path("Resnet1d_ray_serve.jsonl".format(base_filters, kernel_size, n_block, hw))
+    p = Path("Resnet1d_ray_serve.jsonl")
     p.touch()
     os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
     serve.init(blocking=True)
 
-    # Kwargs creator for profiling the service
-    kwargs_creator = lambda : {
-        'info': {
-            "patient_name": "Adam",
-            "value": 0.0,
-            "vtype": "ECG"
-            }
-        }
-
-    # create ECG service
-    serve.create_endpoint("ECG")
     # create data point service for hospital
-    serve.create_endpoint("hospital", route="/hospital",
-                        kwargs_creator=kwargs_creator)
-
-    # create backend for ECG
-    b_config = BackendConfig(num_replicas=1)
-    serve.create_backend(PytorchPredictorECG, "PredictECG",
-                        model, cuda, backend_config=b_config)
-    # link service and backend
-    serve.link("ECG", "PredictECG")
-    handle = serve.get_handle("ECG")
+    serve.create_endpoint("hospital", route="/hospital")
+    
+    ecg_handle = init_predicition_service("ECG", PytorchPredictorECG)
 
     # prepare args for StorePatientData backend.
     service_handles_dict = {"ECG": handle}
@@ -76,11 +58,24 @@ def init_system(list_of_models, gpus):
                         service_handles_dict, num_queries_dict,
                         backend_config=b_config_hospital)
     serve.link("hospital", "StoreData")
+
+def init_prediction_service(service_name, backend_class):
+    # create service
+    serve.create_endpoint("{}".format(service_name))
+
+    # create backend for service
+    b_config = BackendConfig(num_replicas=1)
+    serve.create_backend(backend_class, "Predict{}".format(service_name),
+                        model, cuda, backend_config=b_config)
+    # link service and backend
+    serve.link("{}".format(service_name), "Predict{}".format(service_name))
+    return serve.get_handle(service_name)
+
 def generate_dummy_client(npatient):
     # fire client
     procs = []
-    for _ in range(npatient):
-        ls_output = subprocess.Popen(["go", "run", "patient_client.go"])
+    for patient_id in range(npatient):
+        ls_output = subprocess.Popen(["go", "run", "patient_client.go", "-patientId", patient_id])
         procs.append(ls_output)
     for p in procs:
         p.wait()

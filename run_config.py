@@ -57,7 +57,7 @@ def init_prediction_service(service_name, backend_class, model):
     # create backend for service
     b_config = BackendConfig(num_replicas=1)
     serve.create_backend(backend_class, "Predict{}".format(service_name),
-                        model, cuda=True, backend_config=b_config)
+                        model, False, backend_config=b_config)
     # link service and backend
     serve.link("{}".format(service_name), "Predict{}".format(service_name))
     handle = serve.get_handle(service_name)
@@ -80,7 +80,7 @@ def generate_dummy_client(npatient):
     # fire client
     procs = []
     for patient_id in range(npatient):
-        ls_output = subprocess.Popen(["go", "run", "patient_client.go", "-patientId", patient_id])
+        ls_output = subprocess.Popen(["go", "run", "patient_client.go", "-patientId", str(patient_id)])
         procs.append(ls_output)
     for p in procs:
         p.wait()

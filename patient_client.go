@@ -29,7 +29,7 @@ func main() {
 		// go MakeRequest("http://127.0.0.1:8000/hospital?patient_name=Adam&value=0.0&vtype=ECG", ch)
 		// This is how profiling result is send
 		hostAddr := "http://127.0.0.1:8000/RayServeProfile"
-		go MakeRequest( hostAddr + "/hospital?patient_id=" + patientId +"&value=0.0&vtype=ECG", ch)
+		go MakeRequest( hostAddr, + "/hospital?patient_id=" + *patientId +"&value=0.0&vtype=ECG", ch)
 	}
 	for i := 0; i <= 3800; i++ {
 		fmt.Println(<-ch)

@@ -47,7 +47,7 @@ def init_system(list_of_models, gpus):
         PytorchPredictorECG, model)
         print('generating patient clients: {}'.format(system_constraint["npatient"]))
         generate_dummy_client(system_constraint["npatient"])
-        stop_ray()
+        print("stop_ray()")
 
 
 def init_prediction_service(service_name, backend_class, model):

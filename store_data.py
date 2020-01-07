@@ -22,7 +22,7 @@ class StorePatientData:
         self.service_handles_dict = service_handles_dict
         self.num_queries_dict = num_queries_dict
         # store every patient data in a dictionary
-        # patient_name -> { value_type: [values, ...]}
+        # patient_id -> { value_type: [values, ...]}
         self.patient_data = defaultdict(lambda: defaultdict(list))
         # value_type: ECG (supported right now), vitals etc.
         self.supported_vtypes = supported_vtypes
@@ -31,17 +31,17 @@ class StorePatientData:
         result = ""
         # when client requests via web context
         if serve.context.web:
-            patient_name = flask_request.args.get("patient_name")
+            patient_id = flask_request.args.get("patient_id")
             value = float(flask_request.args.get("value"))
             value_type = flask_request.args.get("vtype")
         else:
             # for profiling via kwargs
-            patient_name = info["patient_name"]
+            patient_id = info["patient_id"]
             value = info["value"]
             value_type = info["vtype"]
         if value_type in self.supported_vtypes:
             # append the data point to the patient's stored data structure
-            patient_val_list = self.patient_data[patient_name][value_type]
+            patient_val_list = self.patient_data[patient_id][value_type]
             patient_val_list.append(torch.tensor([[value]]))
             # check for prediction
             if (len(patient_val_list) ==

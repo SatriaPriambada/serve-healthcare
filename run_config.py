@@ -34,12 +34,11 @@ def generate_bagging_system(list_of_models, system_constraint):
     init_system(list_of_models, system_constraint["gpu"])
 
 def init_system(list_of_models, gpus):
-    p = Path("Resnet1d_ray_serve_ECG.jsonl")
-    p.touch()
-    os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
-    serve.init(blocking=True)
-
     for i,model in enumerate(list_of_models):
+        p = Path("Resnet1d_ray_serve_ECG_{}.jsonl".format(i))
+        p.touch()
+        os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
+        serve.init(blocking=True)
         # create data point service for hospital
         serve.create_endpoint("hospital", route="/hospital")
         print("generate list no: {} ECG".format(i))
@@ -47,7 +46,7 @@ def init_system(list_of_models, gpus):
         PytorchPredictorECG, model)
         print('generating patient clients: {}'.format(system_constraint["npatient"]))
         generate_dummy_client(system_constraint["npatient"])
-        print("stop_ray()")
+        stop_ray()
 
 
 def init_prediction_service(service_name, backend_class, model):
@@ -96,7 +95,7 @@ def generate_dummy_client(npatient):
 if __name__ == '__main__':
     
     list_of_models = []
-    system_constraint = {"gpu":2, "npatient":10}
+    system_constraint = {"gpu":2, "npatient":1}
     print("config: {}".format(args.config))
     if(args.config == 'test'):
         #Test model for ECG example data

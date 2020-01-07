@@ -38,6 +38,7 @@ def init_system(list_of_models, gpus):
         p = Path("Resnet1d_ray_serve_ECG_{}.jsonl".format(i))
         p.touch()
         os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
+        print("serve.init {} ECG".format(i))
         serve.init(blocking=True)
         # create data point service for hospital
         serve.create_endpoint("hospital", route="/hospital")
@@ -76,12 +77,8 @@ def init_prediction_service(service_name, backend_class, model):
     serve.link("hospital", store_data_name)
 
 def stop_ray():
-    # fire client
-    procs = []
-    ls_output = subprocess.Popen(["ray", "stop"])
-    procs.append(ls_output)
-    for p in procs:
-        p.wait()
+    subprocess.call(["ray", "stop"])
+    print("finish stopping ray")
 
 def generate_dummy_client(npatient):
     # fire client

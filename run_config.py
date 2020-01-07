@@ -34,12 +34,12 @@ def generate_bagging_system(list_of_models, system_constraint):
     init_system(list_of_models, system_constraint["gpu"])
 
 def init_system(list_of_models, gpus):
-    for i,model in enumerate(list_of_models):
-        p = Path("Resnet1d_ray_serve_ECG_{}.jsonl".format(i))
-        p.touch()
-        os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
-        serve.init(blocking=True)
+    p = Path("Resnet1d_ray_serve_ECG.jsonl")
+    p.touch()
+    os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
+    serve.init(blocking=True)
 
+    for i,model in enumerate(list_of_models):
         # create data point service for hospital
         serve.create_endpoint("hospital", route="/hospital")
         print("generate list no: {} ECG".format(i))
@@ -126,6 +126,7 @@ if __name__ == '__main__':
                     downsample_gap=max(n_block//8, 1),
                     increasefilter_gap=max(n_block//4, 1),
                     verbose=False)
+        list_of_models.append(pytorch_model_2)
         list_of_models.append(pytorch_model_2)
     else:
         print("no config parameter")

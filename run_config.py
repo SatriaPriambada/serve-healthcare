@@ -48,6 +48,7 @@ def init_system(list_of_models, gpus):
         PytorchPredictorECG, model)
         print('generating patient clients: {}'.format(system_constraint["npatient"]))
         generate_dummy_client(system_constraint["npatient"])
+        stop_ray()
 
 
 def init_prediction_service(service_name, backend_class, model):
@@ -76,6 +77,14 @@ def init_prediction_service(service_name, backend_class, model):
                         backend_config=b_config_hospital)
     serve.link("hospital", store_data_name)
 
+def stop_ray():
+    # fire client
+    procs = []
+    ls_output = subprocess.Popen(["ray", "stop"])
+    procs.append(ls_output)
+    for p in procs:
+        p.wait()
+
 def generate_dummy_client(npatient):
     # fire client
     procs = []
@@ -84,7 +93,6 @@ def generate_dummy_client(npatient):
         procs.append(ls_output)
     for p in procs:
         p.wait()
-
 
 if __name__ == '__main__':
     

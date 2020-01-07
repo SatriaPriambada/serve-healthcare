@@ -77,8 +77,7 @@ def init_prediction_service(service_name, backend_class, model):
     serve.link("hospital", store_data_name)
 
 def stop_ray():
-    subprocess.call(["ray", "stop"])
-    print("finish stopping ray")
+    ray.shutdown()
 
 def generate_dummy_client(npatient):
     # fire client

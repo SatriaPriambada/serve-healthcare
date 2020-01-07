@@ -34,10 +34,6 @@ def generate_bagging_system(list_of_models, system_constraint):
     init_system(list_of_models, system_constraint["gpu"])
 
 def init_system(list_of_models, gpus):
-    p = Path("Resnet1d_ray_serve.jsonl")
-    p.touch()
-    os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
-    serve.init(blocking=True)
 
     # create data point service for hospital
     serve.create_endpoint("hospital", route="/hospital")
@@ -46,6 +42,7 @@ def init_system(list_of_models, gpus):
         p = Path("Resnet1d_ray_serve_ECG_{}.jsonl".format(i))
         p.touch()
         os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
+        serve.init(blocking=True)
         print("generate list no: {} ECG".format(i))
         init_prediction_service("ECG", 
         PytorchPredictorECG, model)

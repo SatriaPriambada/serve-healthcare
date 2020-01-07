@@ -2,3 +2,5 @@ tqdm
 matplotlib
 sklearn
 requests
+seaborn
+statsmodels

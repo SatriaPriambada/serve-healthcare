@@ -2,6 +2,7 @@
 from resnet1d.resnet1d import ResNet1D
 import ensemble_profiler as profiler
 from pathlib import Path
+import os
 
 # ECG
 n_channel = 1

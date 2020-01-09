@@ -17,7 +17,9 @@ from ensemble_profiler.ensemble_pipeline import EnsemblePipeline
 from ensemble_profiler.server import HTTPActor
 import time
 package_directory = os.path.dirname(os.path.abspath(__file__))
-def profile_ensemble(model_list, file_path):
+def profile_ensemble(model_list, file_path, system_constraint):
+    for constraint in system_constraint:
+        print(constraint, '->', system_constraint[constraint])
     serve.init(blocking=True)
     if not os.path.exists(str(file_path.resolve())):
         file_path.touch()
@@ -67,7 +69,7 @@ def profile_ensemble(model_list, file_path):
     client_path = os.path.join(package_directory, "patient_client.go")
     procs = []
     for _ in range(1):
-        ls_output = subprocess.Popen(["go", "run", client_path])
+        ls_output = subprocess.Popen(["go", "run", client_path, ])
         procs.append(ls_output)
     for p in procs:
         p.wait()

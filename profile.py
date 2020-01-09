@@ -22,4 +22,5 @@ model = ResNet1D(in_channels=n_channel,
 
 filename = "profile_results.jsonl"
 file_path = Path(filename)
-profiler.profile_ensemble([model],file_path)
+system_constraint = {"gpu":2, "npatient":1}
+profiler.profile_ensemble([model, model],file_path,system_constraint)

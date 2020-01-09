@@ -64,14 +64,16 @@ def profile_ensemble(model_list, file_path, system_constraint):
     http_actor_handle.run.remote()
     # wait for http actor to get started
     time.sleep(2)
-
+    print("start generating client")
     generate_dummy_client(system_constraint['npatient'])
 
 def generate_dummy_client(npatient):
     # fire client
+    client_path = os.path.join(package_directory, "patient_client.go")
     procs = []
     for patient_id in range(npatient):
-        ls_output = subprocess.Popen(["go", "run", "patient_client.go", "-patientId", str(patient_id)])
+        print(patient_id)
+        ls_output = subprocess.Popen(["go", "run", client_path, "-patientId", str(patient_id)])
         procs.append(ls_output)
     for p in procs:
         p.wait()

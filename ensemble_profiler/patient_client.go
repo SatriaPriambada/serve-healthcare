@@ -10,7 +10,11 @@ import (
 
 func MakeRequest(url string, ch chan<- string) {
 	start := time.Now()
-	resp, _ := http.Get(url)
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Printf("handle error")
+		fmt.Println(err)
+	}
 	secs := time.Since(start).Seconds()
 	body, _ := ioutil.ReadAll(resp.Body)
 	ch <- fmt.Sprintf("%.2f elapsed with response length: %s %s", secs, body, url)
@@ -28,8 +32,9 @@ func main() {
 		// This how actual client will send the result
 		// go MakeRequest("http://127.0.0.1:5000/hospital?patient_name=Adam&value=0.0&vtype=ECG", ch)
 		// This is how profiling result is send
+		// fmt.Printf("%d ", i)
 		hostAddr := "http://127.0.0.1:5000"
-		go MakeRequest( hostAddr + "/hospital?patient_id=" + *patientId +"&value=0.0&vtype=ECG", ch)
+		go MakeRequest( hostAddr + "/hospital?patient_id=0" +"&value=0.0&vtype=ECG", ch)
 	}
 	for i := 0; i <= 3800; i++ {
 		fmt.Println(<-ch)

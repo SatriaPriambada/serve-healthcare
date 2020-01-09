@@ -151,7 +151,7 @@ class HTTPProxy:
         # kwargs = dict()
         flask_request = build_flask_request(scope,http_body_bytes)
         info = {
-        "patient_name" : flask_request.args.get("patient_name"),
+        "patient_id" : flask_request.args.get("patient_id"),
         "value" : float(flask_request.args.get("value")),
         "vtype" : flask_request.args.get("vtype")
         }
@@ -186,4 +186,4 @@ class HTTPActor:
 
     def run(self, host="0.0.0.0", port=5000):
         uvicorn.run(
-            self.app, host=host, port=port, lifespan="on", access_log=False)
+                self.app, host=host, port=port, lifespan="on", access_log=False)

@@ -53,7 +53,7 @@ def visualize():
         latency = sorted(df["latency"])
         ax = sns.lineplot(x="queue_id", y="latency", data=df)
     lgd = plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.,labels=labels)
-    ax.set(xlabel="latency(s)", ylabel="cdf(%)")
+    ax.set(xlabel="query_id", ylabel="latency(s)")
     f = ax.get_figure()
     f.savefig('queue_id_to_latency_time.pdf', ext='pdf', bbox_extra_artists=(lgd,), bbox_inches='tight')
 

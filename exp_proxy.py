@@ -1,10 +1,12 @@
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor as RF
+import pickle
+from tqdm import tqdm
 
 from util import my_eval, get_accuracy_profile, get_latency_profile
 
-def get_field():
+def get_field(n_gpu, n_patients):
     """
     return V and c
     """
@@ -22,8 +24,8 @@ def get_field():
             V.append(tmp)
     V = np.array(V)
 
-    n_gpu = 4
-    n_patients = 100
+    n_gpu = n_gpu
+    n_patients = n_patients
     c = np.array([n_gpu, n_patients])
 
     return V, c
@@ -32,7 +34,9 @@ def random_sample(n_model, n_samples=1000):
     X_train = []
     i = 0
     while i < n_samples:
+        # get a random probability of 1s and 0s
         pp = np.random.rand()
+        # get random binary vector
         tmp = np.random.choice([0, 1], size=n_model, p=(pp,1-pp))
         X_train.append(tmp)
         i += 1
@@ -41,7 +45,7 @@ def random_sample(n_model, n_samples=1000):
 if __name__ == "__main__":
 
     # get fields
-    V, c = get_field()
+    V, c = get_field(n_gpu=4, n_patients=100)
     n_model = V.shape[0]
     b = np.zeros(n_model)
 
@@ -50,10 +54,18 @@ if __name__ == "__main__":
 
     # profile
     Y_accuracy = []
+    all_latency = []
     Y_latency = []
-    for b in B:
+    res = {'B':B, 'Y_accuracy':Y_accuracy, 'Y_latency':Y_latency, 'all_latency':all_latency}
+    for b in tqdm(B):
+        # get_accuracy_profile
         Y_accuracy.append(get_accuracy_profile(V, b))
-        Y_latency.append(get_latency_profile(V, c, b))
+        # get_latency_profile
+        tmp_latency = get_latency_profile(V, c, b)
+        all_latency.append(tmp_latency)
+        Y_latency.append(np.percentile(tmp_latency, 95))
+        with open('res.pkl','wb') as fout:
+            pickle.dump(res, fout)
 
     # solve
     accuracy_predictor = RF()

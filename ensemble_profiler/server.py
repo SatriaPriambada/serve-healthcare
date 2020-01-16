@@ -16,6 +16,7 @@ import os
 from ray import cloudpickle as pickle
 from ray.experimental.serve.http_util import build_flask_request
 import time
+import sys
 
 
 class JSONResponse:
@@ -185,5 +186,6 @@ class HTTPActor:
         self.app = HTTPProxy(address, pipeline, file_name)
 
     def run(self, host="0.0.0.0", port=5000):
+        print('[Tio] sys maxsize {}'.format(sys.maxsize))
         uvicorn.run(
-                self.app, host=host, port=port, lifespan="on", access_log=False)
+            self.app, host=host, port=port, lifespan="on", access_log=True, limit_concurrency=sys.maxsize, limit_max_requests=sys.maxsize)

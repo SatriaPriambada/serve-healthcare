@@ -61,11 +61,14 @@ def profile_ensemble(model_list, file_path, system_constraint):
     pipeline = EnsemblePipeline(model_services, service_handles)
     # start the http server
     http_actor_handle = HTTPActor.remote(ROUTE_ADDRESS, pipeline, file_name)
+    print("[Tio] start http server")
     http_actor_handle.run.remote()
     # wait for http actor to get started
     time.sleep(2)
     print("start generating client")
     generate_dummy_client(system_constraint['npatient'])
+    print("finish generating client and request")
+    serve.shutdown()
 
 def generate_dummy_client(npatient):
     # fire client
@@ -78,4 +81,3 @@ def generate_dummy_client(npatient):
     for p in procs:
         p.wait()
         
-    serve.shutdown()

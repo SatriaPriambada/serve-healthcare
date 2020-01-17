@@ -16,7 +16,10 @@ from ensemble_profiler.ensemble_predictions import Aggregate
 from ensemble_profiler.ensemble_pipeline import EnsemblePipeline
 from ensemble_profiler.server import HTTPActor
 import time
+import torch
+
 package_directory = os.path.dirname(os.path.abspath(__file__))
+total_data_request = 3750
 def profile_ensemble(model_list, file_path, system_constraint):
     for constraint in system_constraint:
         print(constraint, '->', system_constraint[constraint])
@@ -38,10 +41,10 @@ def profile_ensemble(model_list, file_path, system_constraint):
     all_services.append(AGGREGATE_PREDICTIONS)
     
     # create backends
-    num_queries_dict = {"ECG": 3750}
+    num_queries_dict = {"ECG": total_data_request}
     b_config_store_data = BackendConfig(num_replicas=1, enable_predicate=True)
     serve.create_backend(
-        StorePatientData, BACKEND_PREFIX+SERVICE_STORE_ECG_DATA, {"ECG": 3750},
+        StorePatientData, BACKEND_PREFIX+SERVICE_STORE_ECG_DATA, num_queries_dict,
         backend_config=b_config_store_data)
     for service, model in zip(model_services, model_list):
         b_config = BackendConfig(num_replicas=1)
@@ -65,6 +68,16 @@ def profile_ensemble(model_list, file_path, system_constraint):
     http_actor_handle.run.remote()
     # wait for http actor to get started
     time.sleep(2)
+    print("warmup GPU")
+    warmup = 200
+    for handle_name in service_handles:
+        if handle_name != "ECGStoreData":
+            for e in range(warmup):
+                print("warming up handle {} epoch {}".format(handle_name,e))
+                ObjectID = serve.get_handle(handle_name).remote(
+                    data=torch.zeros(total_data_request)
+                )
+
     print("start generating client")
     generate_dummy_client(system_constraint['npatient'])
     print("finish generating client and request")
@@ -76,7 +89,7 @@ def generate_dummy_client(npatient):
     procs = []
     for patient_id in range(npatient):
         print(patient_id)
-        ls_output = subprocess.Popen(["go", "run", client_path, "-patientId", str(patient_id)])
+        ls_output = subprocess.Popen(["go", "run", client_path, "-nreq", str(total_data_request), "-patientId", str(patient_id)])
         procs.append(ls_output)
     for p in procs:
         p.wait()

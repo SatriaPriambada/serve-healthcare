@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor as RF
 import pickle
+import random
 from tqdm import tqdm
 
 from util import my_eval, get_accuracy_profile, get_latency_profile
@@ -40,17 +41,26 @@ def random_sample(n_model, n_samples=1000):
         tmp = np.random.choice([0, 1], size=n_model, p=(pp,1-pp))
         X_train.append(tmp)
         i += 1
+    # X_train = [0] * n_model
+    num_selected = np.count_nonzero(X_train)
+    print("number of model selected: {}".format(num_selected))
+    if num_selected == 0:
+        idx = random.randint(0,n_model-1)
+        print("{}".format(idx))
+        X_train[idx] = 1
+        print("randomly select 1 model index: {} arr {}".format(idx, X_train))
+        
     return np.array(X_train)
 
 if __name__ == "__main__":
 
     # get fields
-    V, c = get_field(n_gpu=4, n_patients=100)
+    V, c = get_field(n_gpu=4, n_patients=1)
     n_model = V.shape[0]
     b = np.zeros(n_model)
 
     # random sample B
-    B = random_sample(n_model=n_model, n_samples=1000)
+    B = random_sample(n_model=n_model, n_samples=2)
 
     # profile
     Y_accuracy = []

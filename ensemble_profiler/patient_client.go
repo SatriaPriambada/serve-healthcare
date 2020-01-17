@@ -45,10 +45,13 @@ func MakeRequest(url string, backoff_counter int, ch chan<- string) {
 }
 
 func main() {
-	totalRequest:=3750
+	nreqPtr := flag.Int("nreq", 200, "an int to show how many request fired from client")
 	patientId:= flag.String("patientId", "0", "string to represent a patient client id")
 	flag.Parse()
+	totalRequest:= *nreqPtr
 	fmt.Println("patient id:", *patientId)
+	fmt.Println("total request:", totalRequest)
+
 	start := time.Now()
 	ch := make(chan string)
 	for i := 0; i <= totalRequest; i++ {
@@ -67,5 +70,6 @@ func main() {
 	}
 	fmt.Printf("client finished %.2fs elapsed\n", time.Since(start).Seconds())
 	// sleep 1 minute to make sure all previous request and socket file descriptor are closed
+	fmt.Println("start sleeping to make sure all socket killed")
 	time.Sleep(time.Minute * 1)
 }

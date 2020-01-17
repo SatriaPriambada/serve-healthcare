@@ -3,5 +3,5 @@
 	url = https://github.com/hsd1503/resnet1d.git
 [submodule "ray"]
 	path = ray
-	url = https://github.com/alindkhare/ray.git
+	url = https://github.com/SatriaPriambada/ray.git
 	branch = serve-health-pipeline-profile

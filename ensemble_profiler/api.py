@@ -68,20 +68,22 @@ def profile_ensemble(model_list, file_path, system_constraint):
     http_actor_handle.run.remote()
     # wait for http actor to get started
     time.sleep(2)
-    print("warmup GPU")
-    warmup = 200
-    for handle_name in service_handles:
-        if handle_name != "ECGStoreData":
-            for e in range(warmup):
-                print("warming up handle {} epoch {}".format(handle_name,e))
-                ObjectID = serve.get_handle(handle_name).remote(
-                    data=torch.zeros(total_data_request)
-                )
-
+    warmup_gpu(service_handles, warmup = 200)
     print("start generating client")
     generate_dummy_client(system_constraint['npatient'])
     print("finish generating client and request")
     serve.shutdown()
+
+def warmup_gpu(service_handles, warmup):
+    print("warmup GPU")
+    for handle_name in service_handles:
+        if handle_name != "ECGStoreData":
+            for e in range(warmup):
+                # print("warming up handle {} epoch {}".format(handle_name,e))
+                ObjectID = serve.get_handle(handle_name).remote(
+                    data=torch.zeros(total_data_request)
+                )
+    print("finish warming up GPU by firing torch zero {} times".format(warmup))
 
 def generate_dummy_client(npatient):
     # fire client

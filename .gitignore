@@ -1,3 +1,5 @@
 __pycache__/
 res.pkl
 .DS_Store
+*.jsonl
+*.pdf

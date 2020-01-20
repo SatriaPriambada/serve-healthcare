@@ -6,10 +6,12 @@ import pandas as pd
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-f', '--filename', nargs='+', type=str, default='profile_results.jsonl', help='start system with test config')
+parser.add_argument('-p', '--path', type=str, default='profiled_examples', help='path to profile pdf image results')
 args = parser.parse_args()
 
 def visualize():
     print("start visualizing {} {}".format(type(args.filename),args.filename))
+    print("result image can be seen in path ./{}".format(args.path))
     list_files = args.filename
     plt.clf()
     labels = []
@@ -32,7 +34,7 @@ def visualize():
     lgd = plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.,labels=labels)
     ax2.set(xlabel="latency(s)", ylabel="cdf(%)")
     fa = ax2.get_figure()
-    fa.savefig('cdf_latency.pdf', ext='pdf', bbox_extra_artists=(lgd,), bbox_inches='tight')
+    fa.savefig(args.path + '/cdf_latency.pdf', ext='pdf', bbox_extra_artists=(lgd,), bbox_inches='tight')
 
     print('draw latency')
     plt.clf()
@@ -55,7 +57,7 @@ def visualize():
     lgd = plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.,labels=labels)
     ax.set(xlabel="query_id", ylabel="latency(s)")
     f = ax.get_figure()
-    f.savefig('queue_id_to_latency_time.pdf', ext='pdf', bbox_extra_artists=(lgd,), bbox_inches='tight')
+    f.savefig(args.path + '/queue_id_to_latency_time.pdf', ext='pdf', bbox_extra_artists=(lgd,), bbox_inches='tight')
 
 
 if __name__ == '__main__':

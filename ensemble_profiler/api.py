@@ -77,12 +77,13 @@ def profile_ensemble(model_list, file_path, system_constraint):
 def warmup_gpu(service_handles, warmup):
     print("warmup GPU")
     for handle_name in service_handles:
-        if handle_name != "ECGStoreData":
+        if handle_name != SERVICE_STORE_ECG_DATA:
             for e in range(warmup):
                 # print("warming up handle {} epoch {}".format(handle_name,e))
                 ObjectID = serve.get_handle(handle_name).remote(
-                    data=torch.zeros(total_data_request)
+                    data=torch.zeros(1,1,total_data_request)
                 )
+                ray.get(ObjectID)
     print("finish warming up GPU by firing torch zero {} times".format(warmup))
 
 def generate_dummy_client(npatient):

@@ -2,7 +2,6 @@
 from resnet1d.resnet1d import ResNet1D
 import ensemble_profiler as profiler
 from pathlib import Path
-import os
 
 # ECG
 n_channel = 1
@@ -21,11 +20,6 @@ model = ResNet1D(in_channels=n_channel,
                  increasefilter_gap=max(n_block//4, 1),
                  verbose=False)
 
-filename = "profile_results.jsonl"
-p = Path(filename)
-p.touch()
-os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
-file_path = Path(filename)
-system_constraint = {"gpu":2, "npatient":1}
-for i in range(3):
-    profiler.profile_ensemble([model],file_path,system_constraint)
+time, num_queries = profiler.calculate_throughput([model])
+throughput = float(num_queries)/time
+print("Throughput is : {} QPS".format(throughput))

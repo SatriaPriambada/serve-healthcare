@@ -186,6 +186,5 @@ class HTTPActor:
         self.app = HTTPProxy(address, pipeline, file_name)
 
     def run(self, host="0.0.0.0", port=5000):
-        print('[Tio] sys maxsize {}'.format(sys.maxsize))
         uvicorn.run(
             self.app, host=host, port=port, lifespan="on", access_log=True, limit_concurrency=sys.maxsize, limit_max_requests=sys.maxsize)

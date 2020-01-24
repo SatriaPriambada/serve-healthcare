@@ -3,6 +3,7 @@ import os
 import ray
 from ensemble_profiler.utils import *
 import time
+import torch
 from ensemble_profiler.server import HTTPActor
 import subprocess
 from ensemble_profiler.constants import ROUTE_ADDRESS
@@ -21,7 +22,7 @@ def profile_ensemble(model_list, file_path, num_patients=1,
         file_name = str(file_path.resolve())
 
         # create the pipeline
-        pipeline = create_services(model_list)
+        pipeline, service_handles = create_services(model_list)
 
         # create patient handles
         actor_handles = start_patient_actors(num_patients=num_patients,
@@ -38,15 +39,30 @@ def profile_ensemble(model_list, file_path, num_patients=1,
         http_actor_handle.run.remote(host=http_host, port=8000)
         # wait for http actor to get started
         time.sleep(2)
+        warmup_gpu(service_handles, warmup = 200)
+        generate_dummy_client(fire_clients, actor_handles)
+        serve.shutdown()
 
-        # fire client
-        if fire_clients:
-            client_path = os.path.join(package_directory, "patient_client.go")
-            procs = []
-            for patient_name in actor_handles.keys():
-                ls_output = subprocess.Popen(
-                    ["go", "run", client_path, patient_name])
-                procs.append(ls_output)
-            for p in procs:
-                p.wait()
-            serve.shutdown()
+def warmup_gpu(service_handles, warmup):
+    print("warmup GPU")
+    total_data_request = 3750
+    for handle_name in service_handles:
+        for e in range(warmup):
+            # print("warming up handle {} epoch {}".format(handle_name,e))
+            ObjectID = serve.get_handle(handle_name).remote(
+                    data=torch.zeros(1,1,total_data_request)
+            )
+            ray.get(ObjectID)
+    print("finish warming up GPU by firing torch zero {} times".format(warmup))
+
+def generate_dummy_client(fire_clients, actor_handles):
+    # fire client
+    if fire_clients:
+        client_path = os.path.join(package_directory, "patient_client.go")
+        procs = []
+        for patient_name in actor_handles.keys():
+            ls_output = subprocess.Popen(
+                ["go", "run", client_path, patient_name])
+            procs.append(ls_output)
+        for p in procs:
+            p.wait()

@@ -65,8 +65,9 @@ def save_checkpoint(res):
     with open('res.pkl','wb') as fout:
         pickle.dump(res, fout)
 
-if __name__ == "__main__":
+##################################################################################################
 
+def solve_proxy(V, c):
     # --------------------- hyper parameters ---------------------
     L = 0.1 # maximum latency
     lamda = 10
@@ -76,9 +77,7 @@ if __name__ == "__main__":
     epoches = 10
 
     # --------------------- initialization ---------------------
-    V, c = get_description(n_gpu=4, n_patients=1)
     n_model = V.shape[0]
-    opt_b = np.zeros(n_model)
     B = []
     Y_accuracy = []
     all_latency = []
@@ -138,6 +137,15 @@ if __name__ == "__main__":
     for i in range(len(B)):
         all_obj.append(get_obj(Y_accuracy[i], Y_latency[i], lamda, L))
     opt_idx = np.argmax(all_obj)
-    print('found best b is: {}'.format(B[opt_idx]))
+    opt_b = B[opt_idx]
+    print('found best b is: {}'.format(opt_b))
+
+
+if __name__ == "__main__":
+
+    V, c = get_description(n_gpu=4, n_patients=1)
+
+    solve_proxy(V, c)
+
 
 

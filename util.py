@@ -36,7 +36,7 @@ def get_latency_profile(V, c, b):
     """
     need to real profile test
     """
-    return np.random.rand()
+    return 1e-3*np.random.rand(100)
 
 # def get_latency_profile(V, c, b):
 #     """

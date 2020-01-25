@@ -36,32 +36,38 @@ def get_latency_profile(V, c, b):
     """
     need to real profile test
     """
-    v = V[np.array(b, dtype=bool)]
-    print(V.shape, v.shape, b)
-    model_list = []
-    for i_model in v:
-        model_list.append(get_model(int(i_model[0]), int(i_model[1])))
+    return np.random.rand()
 
-    filename = "profile_results.jsonl"
-    p = Path(filename)
-    p.touch()
-    os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
-    file_path = Path(filename)
-    system_constraint = {"gpu":c[0], "npatient":c[1]}
-    profiler.profile_ensemble(model_list,file_path,system_constraint)
+# def get_latency_profile(V, c, b):
+#     """
+#     need to real profile test
+#     """
+#     v = V[np.array(b, dtype=bool)]
+#     print(V.shape, v.shape, b)
+#     model_list = []
+#     for i_model in v:
+#         model_list.append(get_model(int(i_model[0]), int(i_model[1])))
 
-    input_file = filename
-    json_list = []
-    df = pd.DataFrame(columns=['request_arrival','latency(ms)'])
-    with open(input_file) as f:
-        for line in f:
-            json_list.append(json.loads(line))
-    #print(json_list)
-    for i, item in enumerate(json_list):
-        latency = item["end"] - item["start"]
-        df = df.append({'queue_id': i,'latency':latency}, ignore_index=True)
-    print("res shape: ", df.shape)
-    #print("sort list {}".format(sorted(df["latency"])))
-    latency = df["latency"]
+#     filename = "profile_results.jsonl"
+#     p = Path(filename)
+#     p.touch()
+#     os.environ["SERVE_PROFILE_PATH"] = str(p.resolve())
+#     file_path = Path(filename)
+#     system_constraint = {"gpu":c[0], "npatient":c[1]}
+#     profiler.profile_ensemble(model_list,file_path,system_constraint)
 
-    return latency
+#     input_file = filename
+#     json_list = []
+#     df = pd.DataFrame(columns=['request_arrival','latency(ms)'])
+#     with open(input_file) as f:
+#         for line in f:
+#             json_list.append(json.loads(line))
+#     #print(json_list)
+#     for i, item in enumerate(json_list):
+#         latency = item["end"] - item["start"]
+#         df = df.append({'queue_id': i,'latency':latency}, ignore_index=True)
+#     print("res shape: ", df.shape)
+#     #print("sort list {}".format(sorted(df["latency"])))
+#     latency = df["latency"]
+
+#     return latency

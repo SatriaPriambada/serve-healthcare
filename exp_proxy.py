@@ -60,7 +60,7 @@ if __name__ == "__main__":
     b = np.zeros(n_model)
 
     # random sample B
-    B = random_sample(n_model=n_model, n_samples=2)
+    B = random_sample(n_model=n_model, n_samples=100)
 
     # profile
     Y_accuracy = []

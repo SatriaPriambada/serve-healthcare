@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.metrics import mean_squared_error
 from math import sqrt
 from resnet1d.resnet1d import ResNet1D
-import ensemble_profiler as profiler
+# import ensemble_profiler as profiler
 from pathlib import Path
 import os
 import json

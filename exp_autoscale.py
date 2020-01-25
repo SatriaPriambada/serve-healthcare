@@ -66,10 +66,72 @@ def save_checkpoint(res):
         pickle.dump(res, fout)
 
 ##################################################################################################
+# naive
+##################################################################################################
+def solve_random(V, c, L):
+    """
+    random incremental
+    """
+    n_model = V.shape[0]
+    b = np.zeros(n_model)
+    idx_all = list(range(n_model))
+    latency = 0.0
+    for i in range(n_model):
+        tmp_idx = np.random.choice(idx_all)
+        idx_all.remove(tmp_idx)
+        b[tmp_idx] = 1
+        tmp_latency = get_latency_profile(V, c, b)
+        latency = np.percentile(tmp_latency, 95)
+        print(tmp_idx, b, latency)
+        if latency >= L:
+            break
+    print('found best b is: {}'.format(b))
+    return b
 
+def solve_greedy_accuracy(V, c, L):
+    """
+    greedy accuracy incremental
+    """
+    n_model = V.shape[0]
+    b = np.zeros(n_model)
+    idx_order = np.argsort(V[:, 2])[::-1] # the 3rd col is accuracy
+    latency = 0.0
+    for i in range(n_model):
+        tmp_idx = idx_order[i]
+        b[tmp_idx] = 1
+        tmp_latency = get_latency_profile(V, c, b)
+        latency = np.percentile(tmp_latency, 95)
+        print(tmp_idx, b, latency)
+        if latency >= L:
+            break
+    print('found best b is: {}'.format(b))
+    return b
+
+def solve_greedy_latency(V, c, L):
+    """
+    greedy latency incremental
+    """
+    n_model = V.shape[0]
+    b = np.zeros(n_model)
+    idx_order = np.argsort(V[:, 3]) # the 4th col is latency
+    latency = 0.0
+    for i in range(n_model):
+        tmp_idx = idx_order[i]
+        b[tmp_idx] = 1
+        tmp_latency = get_latency_profile(V, c, b)
+        latency = np.percentile(tmp_latency, 95)
+        print(tmp_idx, b, latency)
+        if latency >= L:
+            break
+    print('found best b is: {}'.format(b))
+    return b
+
+##################################################################################################
+# proxy
+##################################################################################################
 def solve_proxy(V, c):
     # --------------------- hyper parameters ---------------------
-    L = 0.1 # maximum latency
+    
     lamda = 10
     N1 = 10 # warm start
     N2 = 1000 # proxy
@@ -139,13 +201,16 @@ def solve_proxy(V, c):
     opt_idx = np.argmax(all_obj)
     opt_b = B[opt_idx]
     print('found best b is: {}'.format(opt_b))
-
+    return opt_b
 
 if __name__ == "__main__":
-
+    
+    L = 0.1 # maximum latency
     V, c = get_description(n_gpu=4, n_patients=1)
 
-    solve_proxy(V, c)
-
+    # solve_proxy(V, c, L)
+    # solve_random(V, c, L)
+    # solve_greedy_accuracy(V, c, L)
+    solve_greedy_latency(V, c, L)
 
 

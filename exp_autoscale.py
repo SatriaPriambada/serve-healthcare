@@ -325,11 +325,14 @@ if __name__ == "__main__":
     lamda = 10
     V, c = get_description(n_gpu=4, n_patients=1)
 
-    # solve_random(V, c, L, lamda)
-    # solve_greedy_accuracy(V, c, L, lamda)
-    # solve_greedy_latency(V, c, L, lamda)
+    # ---------- naive solutions ----------
+    solve_random(V, c, L, lamda)
+    solve_greedy_accuracy(V, c, L, lamda)
+    solve_greedy_latency(V, c, L, lamda)
 
-    # solve_opt_passive(V, c, L, lamda)
+    # ---------- opt solutions ----------
+    solve_opt_passive(V, c, L, lamda)
     solve_opt_active(V, c, L, lamda)
 
-    # solve_proxy(V, c, L, lamda)
+    # ---------- proxy solutions ----------
+    solve_proxy(V, c, L, lamda)

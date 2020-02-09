@@ -164,6 +164,7 @@ def profile_ensemble(model_list, file_path,
                 return T_s
         except Exception as e:
             serve.shutdown()
+            print(str(e))
             return None
 
 

@@ -7,10 +7,10 @@ import ray
 
 # ECG
 n_channel = 1
-base_filters = 64
+base_filters = 128
 kernel_size = 16
 n_classes = 2
-n_block = 2
+n_block = 8
 model = ResNet1D(in_channels=n_channel,
                  base_filters=base_filters,
                  kernel_size=kernel_size,
@@ -24,4 +24,5 @@ model = ResNet1D(in_channels=n_channel,
 
 filename = "profile_results.jsonl"
 file_path = Path(filename)
-profiler.profile_ensemble([model], file_path, fire_clients=False)
+tq, ts = profiler.profile_ensemble([model], file_path, fire_clients=True, with_data_collector=False)
+print("tq: {}, ts: {}".format(tq, ts))

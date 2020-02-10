@@ -23,7 +23,8 @@ func main() {
 	if err != nil {
 		time_ms = 20.0
 	}
-	fmt.Println(patient_name)
+	obs_w_30sec := os.Args[3]
+	fmt.Println("name: %s, obs_w_30sec: %s", patient_name, obs_w_30sec)
 	fmt.Print(time_ms)
 	ch := make(chan string)
 	for i := 0; i <= 100; i++ {
@@ -32,7 +33,7 @@ func main() {
 		time.Sleep(time.Duration(time_ms) * time.Millisecond)
 		// This how actual client will send the result
 		go MakeRequest("http://127.0.0.1:8000/profileEnsemble?patient_name="+
-			patient_name+"&value=0.0&vtype=ECG", ch)
+			patient_name+"&obs_w_30sec="+obs_w_30sec, ch)
 		// This is how profiling result is send
 		//go MakeRequest("http://127.0.0.1:8000/RayServeProfile/hospital", ch)
 	}

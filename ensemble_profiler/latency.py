@@ -5,7 +5,7 @@ from ensemble_profiler.utils import *
 import time
 from ensemble_profiler.server import HTTPActor
 import subprocess
-from ensemble_profiler.constants import ROUTE_ADDRESS, PROFILE_ENSEMBLE
+from ensemble_profiler.constants import ROUTE_ADDRESS, PROFILE_ENSEMBLE, PREDITICATE_INTERVAL
 from ensemble_profiler.tq_simulator import find_tq
 import time
 from threading import Event
@@ -20,10 +20,10 @@ import numpy as np
 package_directory = os.path.dirname(os.path.abspath(__file__))
 
 
-def _calculate_throughput_ensemble(pipeline):
+def _calculate_throughput_ensemble(pipeline, obs_w_30sec):
     num_queries = 100
     start_time = time.time()
-    futures = [pipeline.remote(data=torch.zeros(1, 1, 3750))
+    futures = [pipeline.remote(data=torch.zeros(obs_w_30sec, 1, PREDITICATE_INTERVAL))
                for _ in range(num_queries)]
     result = ray.get(futures)
     end_time = time.time()
@@ -93,7 +93,7 @@ def profile_ensemble(model_list, file_path,
 
             if not with_data_collector:
                 # calculating the throughput
-                mu_qps = _calculate_throughput_ensemble(pipeline)
+                mu_qps = _calculate_throughput_ensemble(pipeline, obs_w_30sec)
                 print("Throughput of Ensemble is : {} QPS".format(mu_qps))
                 lambda_qps = _heuristic_lambda_calculation(mu_qps)
                 waiting_time_ms = 1000.0/lambda_qps
@@ -116,7 +116,7 @@ def profile_ensemble(model_list, file_path,
                 for patient_name in actor_handles.keys():
                     final_cmd = cmd + [patient_name]
                     if not with_data_collector:
-                        final_cmd += [str(waiting_time_ms)]
+                        final_cmd += [str(waiting_time_ms), str(obs_w_30sec)]
                     ls_output = subprocess.Popen(final_cmd)
                     procs.append(ls_output)
                 for p in procs:
@@ -125,17 +125,10 @@ def profile_ensemble(model_list, file_path,
                 T_s = _calculate_latency(file_name)
                 if not with_data_collector:
                     T_q = find_tq(lambda_qps, num_patients, mu_qps, T_s)
-                    return T_q + T_s
+                    return T_q, T_s
                 return T_s
             else:
-                req_params = {"npatient": 1,
-                              "serve_ip": IPv4addr,
-                              "serve_port": serve_port,
-                              "go_client_name": "profile_ensemble",
-                              "waiting_time_ms": waiting_time_ms,
-                              "obs_w_30sec":obs_w_30sec}
-                fire_remote_clients(url, req_params)
-                print("finish firing remote clients")
+                req_params = {}
                 gw = os.popen("ip -4 route show default").read().split()
                 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                 s.connect((gw[2], 0))
@@ -154,7 +147,8 @@ def profile_ensemble(model_list, file_path,
                                   "serve_ip": IPv4addr,
                                   "serve_port": serve_port,
                                   "go_client_name": "profile_ensemble",
-                                  "waiting_time_ms": waiting_time_ms}
+                                  "waiting_time_ms": waiting_time_ms,
+                                  "obs_w_30sec":obs_w_30sec}
                 fire_remote_clients(url, req_params)
                 print("finish firing remote clients")
                 serve.shutdown()

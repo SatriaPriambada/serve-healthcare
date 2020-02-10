@@ -1,0 +1,2233 @@
+2020-02-09 19:36:10,695	WARNING worker.py:677 -- WARNING: Not updating worker name since `setproctitle` is not installed. Install this with `pip install setproctitle` (or ray[debug]) to enable monitoring of worker processes.
+2020-02-09 19:36:10,748	INFO resource_spec.py:216 -- Starting Ray with 345.21 GiB memory available for workers and up to 0.93 GiB for objects. You can adjust these settings with ray.init(memory=<bytes>, object_store_memory=<bytes>).
+2020-02-09 19:36:11,031	WARNING services.py:1088 -- Failed to start the dashboard. The dashboard requires Python 3 as well as 'pip install aiohttp psutil setproctitle grpcio'.
+2020-02-09 19:36:11,079	WARNING services.py:1009 -- Failed to start the reporter. The reporter requires 'pip install psutil'.
+2020-02-09 19:36:39,405	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,405	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,406	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,407	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,408	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,409	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:40,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,410	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,411	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,412	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,413	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:41,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,414	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,415	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,415	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,415	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,415	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,415	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,415	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+2020-02-09 19:36:42,416	ERROR worker.py:998 -- Possible unhandled error from worker: [36mray_worker[39m (pid=34676, ip=130.207.124.200)
+  File "python/ray/_raylet.pyx", line 629, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 630, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 519, in ray._raylet.deserialize_args
+ray.exceptions.RayTaskError: [36mray_worker[39m (pid=34701, ip=130.207.124.200)
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 35, in wrap_to_ray_error
+    raise exception
+  File "/nethome/spriambada3/serve-healthcare/ray/python/ray/experimental/serve/task_runner.py", line 127, in invoke_single
+    result = self.__call__(*args, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/ensemble_profiler/patient_prediction.py", line 21, in __call__
+    result = self.model(data)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/serve-healthcare/resnet1d/resnet1d.py", line 270, in forward
+    out = self.first_block_bn(out)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 81, in forward
+    exponential_average_factor, self.eps)
+  File "/nethome/spriambada3/anaconda3/envs/serve-health/lib/python3.6/site-packages/torch/nn/functional.py", line 1670, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM
+WARNING: Not monitoring node memory since `psutil` is not installed. Install this with `pip install psutil` (or ray[debug]) to enable debugging of memory-related crashes.
+find all latency profile for 1 patients
+[2m[36m(pid=34681)[0m INFO:     Started server process [34681]
+[2m[36m(pid=34681)[0m INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+[2m[36m(pid=34681)[0m INFO:     Waiting for application startup.
+[2m[36m(pid=34681)[0m INFO:     Application startup complete.
+[2m[36m(pid=34681)[0m INFO:     127.0.0.1:33512 - "GET / HTTP/1.1" 200 OK
+[2m[36m(pid=34669)[0m INFO:     Started server process [34669]
+[2m[36m(pid=34669)[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2m[36m(pid=34669)[0m INFO:     Waiting for application startup.
+[2m[36m(pid=34669)[0m INFO:     Application startup complete.
+warmup GPU
+finish warming up GPU by firing torch zero 200 times
+[2m[36m(pid=34681)[0m INFO:     127.0.0.1:34774 - "GET / HTTP/1.1" 200 OK
+[2m[33m(pid=raylet)[0m *** Aborted at 1581295107 (unix time) try "date -d @1581295107" if you are using GNU date ***
+[2m[33m(pid=raylet)[0m PC: @                0x0 (unknown)
+[2m[33m(pid=raylet)[0m *** SIGTERM (@0x102aa100008f1a) received by PID 34624 (TID 0x7f07f4d61780) from PID 36634; stack trace: ***
+[2m[33m(pid=raylet)[0m     @     0x7f07f421e890 (unknown)
+[2m[33m(pid=raylet)[0m     @     0x7f07f3b1cb77 epoll_wait
+[2m[33m(pid=raylet)[0m     @     0x5616943ec781 boost::asio::detail::epoll_reactor::run()
+[2m[33m(pid=raylet)[0m     @     0x5616943ed072 boost::asio::detail::scheduler::run()
+[2m[33m(pid=raylet)[0m     @     0x5616943d8f41 main
+[2m[33m(pid=raylet)[0m     @     0x7f07f3a1cb97 __libc_start_main
+[2m[33m(pid=raylet)[0m     @     0x5616943de56a _start
+The Raylet died with this message: Encountered unexpected EOF
+Traceback (most recent call last):
+  File "exp_obs_window.py", line 39, in <module>
+    tq, ts = profiler.profile_ensemble([model], file_path, fire_clients=True, with_data_collector=False,obs_w_30sec=obs_w_30sec)
+TypeError: 'NoneType' object is not iterable

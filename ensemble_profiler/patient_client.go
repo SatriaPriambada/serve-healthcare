@@ -20,17 +20,18 @@ func main() {
 	patient_name := os.Args[1]
 	fmt.Println(patient_name)
 	ch := make(chan string)
-	for i := 0; i <= 3800; i++ {
+	max_request := 3749
+	for i := 0; i <= max_request; i++ {
 		// wait for 8 milliseconds to simulate the patient
 		// incoming data
 		time.Sleep(8 * time.Millisecond)
 		// This how actual client will send the result
 		go MakeRequest("http://127.0.0.1:8000/hospital?patient_name="+
-			patient_name+"&value=0.0&vtype=ECG", ch)
+			patient_name+"&value=0.0&value=0.0&vtype=ECG", ch)
 		// This is how profiling result is send
 		//go MakeRequest("http://127.0.0.1:8000/RayServeProfile/hospital", ch)
 	}
-	for i := 0; i <= 3800; i++ {
+	for i := 0; i <= max_request; i++ {
 		fmt.Println(<-ch)
 	}
 	fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())

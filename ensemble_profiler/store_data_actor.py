@@ -30,6 +30,11 @@ class StatefulPatientActor:
         assert patient_name == self.patient_name
         value = info["value"]
         value_type = info["vtype"]
+        if isinstance(value,list):
+            tmp_val = value
+            value = []
+            for v in tmp_val:
+                value.append(float(v))
         result = ""
         if value_type == self.supported_vtypes:
             result = "Data Recorded"
